@@ -103,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = startPos;
         StartCoroutine(Blink());
         lives--;
+        SetText();
 
         if (lives <=0)
         {
@@ -125,5 +126,24 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(.1f);
         }
         GetComponent<MeshRenderer>().enabled = true;
+    }
+    //Colliding function - enemies and collectables
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag ("Coin"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            SetText();
+        }
+
+        if (other.tag == "Enemy")
+        {
+            Respawn();
+        }
+        if (other.tag == "Lava")
+        {
+            Respawn();
+        }
     }
 }

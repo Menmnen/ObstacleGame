@@ -175,10 +175,10 @@ MonoBehaviour:
   speed: 10
   jump_force: 20
   isGrounded: 1
-  livesText: {fileID: 0}
-  countText: {fileID: 0}
+  livesText: {fileID: 1992641387}
+  countText: {fileID: 878330952}
   winText: {fileID: 751270513}
-  gameOverText: {fileID: 0}
+  gameOverText: {fileID: 1365561433}
   lives: 3
   fallDepth: 0
 --- !u!136 &282565897
@@ -927,7 +927,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1365561434
 CanvasRenderer:
   m_ObjectHideFlags: 0
