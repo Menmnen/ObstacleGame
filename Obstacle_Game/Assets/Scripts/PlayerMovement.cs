@@ -145,5 +145,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Respawn();
         }
+        if (other.gameObject.CompareTag("Fall"))
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

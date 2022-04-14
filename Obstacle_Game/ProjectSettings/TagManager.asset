@@ -4,12 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
   - Text
-=======
-  - Koopa
-  - KoopaHead
->>>>>>> Stashed changes
+  - Lava
+  - Enemy
+  - Fall
   layers:
   - Default
   - TransparentFX
