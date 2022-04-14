@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - Text
+=======
+  - Koopa
+  - KoopaHead
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
