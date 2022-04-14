@@ -12,11 +12,14 @@ public class EnemyMove : MonoBehaviour
     public bool goingLeft = true;
     public int speed;
 
+
     // Start is called before the first frame update
     void Start()
     {
         leftPos = leftPoint.transform.position;
+
         rightPos = rightPiont.transform.position;
+
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class EnemyMove : MonoBehaviour
                 transform.position += Vector3.right * Time.deltaTime * speed;
             }
         }
-    }
 
+
+    }
 }
