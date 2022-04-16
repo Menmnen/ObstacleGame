@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Fall
   - Coin
+  - Spike
+  - DrippingLava
   layers:
   - Default
   - TransparentFX

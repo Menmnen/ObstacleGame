@@ -141,7 +141,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Respawn();
         }
+        if (other.tag == "Spike")
+        {
+            Respawn();
+        }
         if (other.tag == "Lava")
+        {
+            Respawn();
+        }
+        if (other.tag == "DrippingLava")
         {
             Respawn();
         }
@@ -150,4 +158,5 @@ public class PlayerMovement : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+
 }
