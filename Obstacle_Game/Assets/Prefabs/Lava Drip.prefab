@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7779868053547885287}
   - component: {fileID: 7779868053547885286}
   m_Layer: 0
-  m_Name: LavaDrip
+  m_Name: Lava Drip
   m_TagString: DrippingLava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
