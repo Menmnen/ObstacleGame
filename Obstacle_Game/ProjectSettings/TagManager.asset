@@ -8,6 +8,7 @@ TagManager:
   - Lava
   - Enemy
   - Fall
+  - Coin
   layers:
   - Default
   - TransparentFX
