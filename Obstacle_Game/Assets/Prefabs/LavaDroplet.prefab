@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7779868053547885281
+--- !u!1 &3790207875391094286
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7779868053547885307}
-  - component: {fileID: 7779868053547885306}
-  - component: {fileID: 7779868053547885285}
-  - component: {fileID: 7779868053547885284}
-  - component: {fileID: 7779868053547885287}
-  - component: {fileID: 7779868053547885286}
+  - component: {fileID: 542796921927192084}
+  - component: {fileID: 5506691947037410859}
+  - component: {fileID: 3049203118464814244}
+  - component: {fileID: 2700096551741958936}
+  - component: {fileID: 4376297504693501627}
+  - component: {fileID: 3921433885413857385}
   m_Layer: 0
-  m_Name: Lava Drip
-  m_TagString: DrippingLava
+  m_Name: LavaDroplet
+  m_TagString: LavaDroplet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7779868053547885307
+--- !u!4 &542796921927192084
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779868053547885281}
+  m_GameObject: {fileID: 3790207875391094286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.972351, y: 2.8062296, z: -15.6152525}
+  m_LocalPosition: {x: 17.680004, y: 2, z: 0.49999905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7779868053547885306
+--- !u!33 &5506691947037410859
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779868053547885281}
+  m_GameObject: {fileID: 3790207875391094286}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7779868053547885285
+--- !u!23 &3049203118464814244
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779868053547885281}
+  m_GameObject: {fileID: 3790207875391094286}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,26 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7779868053547885284
+--- !u!135 &2700096551741958936
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779868053547885281}
+  m_GameObject: {fileID: 3790207875391094286}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7779868053547885287
+--- !u!54 &4376297504693501627
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779868053547885281}
+  m_GameObject: {fileID: 3790207875391094286}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -113,15 +113,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7779868053547885286
+--- !u!114 &3921433885413857385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779868053547885281}
+  m_GameObject: {fileID: 3790207875391094286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32743b3371a9d948bd5685bbe0faa48, type: 3}
+  m_Script: {fileID: 11500000, guid: b648048cf065e0e44871ee31bb7ba2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

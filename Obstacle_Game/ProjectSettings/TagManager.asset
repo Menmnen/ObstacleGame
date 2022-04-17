@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Spike
   - Text
   - Lava
-  - Enemy
-  - Fall
   - Coin
-  - Spike
-  - DrippingLava
+  - LavaDroplet
+  - Laser
   layers:
   - Default
   - TransparentFX

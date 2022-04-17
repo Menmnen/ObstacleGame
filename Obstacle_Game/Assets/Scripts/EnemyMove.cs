@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public float speed;
+    //initializing variables
     public GameObject leftPoint;
-    public GameObject rightPoint;
+    public GameObject rightPiont;
     private Vector3 leftPos;
     private Vector3 rightPos;
-    private bool goingLeft = true;
+    public bool goingLeft = true;
+    public int speed;
+
 
     // Start is called before the first frame update
     void Start()
     {
         leftPos = leftPoint.transform.position;
-        rightPos = rightPoint.transform.position;
+
+        rightPos = rightPiont.transform.position;
+
     }
 
     // Update is called once per frame
@@ -23,10 +27,11 @@ public class EnemyMove : MonoBehaviour
     {
         Move();
     }
-    //Move right to left
+
     private void Move()
     {
-        if(goingLeft)
+        // if moving left -> check the boundary, add left vector
+        if (goingLeft)
         {
             if (transform.position.x <= leftPos.x)
             {
@@ -37,6 +42,7 @@ public class EnemyMove : MonoBehaviour
                 transform.position += Vector3.left * Time.deltaTime * speed;
             }
         }
+        // else moving right -> check the boundary, add right vector
         else
         {
             if (transform.position.x >= rightPos.x)
@@ -48,7 +54,7 @@ public class EnemyMove : MonoBehaviour
                 transform.position += Vector3.right * Time.deltaTime * speed;
             }
         }
+
+
     }
-
-
 }

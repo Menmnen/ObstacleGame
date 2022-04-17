@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46dd2c34636d7fa45bb499356e959b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lava_drip_prefab: {fileID: 7779868053547885281, guid: 64cd30dbd17a31343a166a7efeba003d, type: 3}
+  lava_drip_prefab: {fileID: 3790207875391094286, guid: 0e45238bf87865e43ad273d139590e3e, type: 3}
 --- !u!4 &1437782595
 Transform:
   m_ObjectHideFlags: 0
@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46dd2c34636d7fa45bb499356e959b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lava_drip_prefab: {fileID: 7779868053547885281, guid: 64cd30dbd17a31343a166a7efeba003d, type: 3}
+  lava_drip_prefab: {fileID: 3790207875391094286, guid: 0e45238bf87865e43ad273d139590e3e, type: 3}
 --- !u!4 &1919189734
 Transform:
   m_ObjectHideFlags: 0
