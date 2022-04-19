@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
         {
             this.enabled = false;
         }
-        if(count =5)
+        if(count == 5)
         {
 
             this.enabled = false;
