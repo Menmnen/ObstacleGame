@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Name: Jasmine Martinez
+ * 4/18/22
+ * having a mouse behind the player and able to move view
+ * 
+ */
+
 public class MouseLook : MonoBehaviour
 {
 

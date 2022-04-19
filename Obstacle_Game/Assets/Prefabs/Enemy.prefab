@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 571552237292994452}
   - component: {fileID: 571552237292994455}
   - component: {fileID: 571552237292994454}
-  - component: {fileID: 571552237292994449}
+  - component: {fileID: 677792876684122667}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -128,7 +128,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &571552237292994449
+--- !u!114 &677792876684122667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,12 +137,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 571552237292994448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca97969c13782746b4afb0e1a4982de, type: 3}
+  m_Script: {fileID: 11500000, guid: 632dcdabeef5941a19d716b93dafe834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   leftPoint: {fileID: 571552237430287387}
-  rightPoint: {fileID: 571552236077492198}
+  rightPiont: {fileID: 571552236077492198}
+  goingLeft: 1
+  speed: 0
 --- !u!1 &571552237430287387
 GameObject:
   m_ObjectHideFlags: 0

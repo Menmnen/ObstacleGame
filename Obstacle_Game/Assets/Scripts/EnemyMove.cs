@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Name: Jasmine Martinez and Janice Xiong
+ * 4/18/22
+ * Enemy move side to side
+ * 
+ */
 public class EnemyMove : MonoBehaviour
 {
     //initializing variables

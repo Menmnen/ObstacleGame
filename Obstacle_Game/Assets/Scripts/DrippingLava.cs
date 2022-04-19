@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Name: Jasmine Martinez
+ * 4/18/22
+ * Drippinglava
+ * 
+ */
+
 public class DrippingLava : MonoBehaviour
 {
 

@@ -1,46 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* Name: Jasmine Martinez and Janice Xiong
+ * 4/18/22
+ * Player Move, Dies, Jump, Respawn, Display UI Text
+ * 
+ */
 public class PlayerMovement : MonoBehaviour
 {
-   //Movement variables 
-    public float speed;
+    //Movement variables 
+    public int speed;
     private Rigidbody rigid_body;
     public float jump_force = 20;
     public bool isGrounded;
 
     //Have Win and Losing Text
-    private int count;
+    public int count = 0;
     public Text livesText;
     public Text countText;
     public Text winText;
     public Text gameOverText;
 
+
     //Create a respawn function
     private Vector3 startPos;
     public int lives = 3;
-    public int fallDepth;
+
+
+
+    //Counting sceneNumbers
+    public int sceneNumber = 1;
+
+    //Laser Variables
+    public float stunTimer;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        rigid_body = GetComponent<Rigidbody>();
-        count = 0;
         startPos = transform.position;
+        rigid_body = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
         SetText();
-        winText.text = "";
     }
+
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
         move();
+
         //jump
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2.0f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.5f))
         {
             isGrounded = true;
         }
@@ -54,62 +73,46 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    //Text
-    void SetText()
-    {
-        countText.text = "Count:" + count.ToString();
-        livesText.text = "Lives:" + lives.ToString();
-        if (lives <= 0)
-        {
-            gameOverText.text = "Game Over";
-        }
-        if (count >= 5)
-        {
-            winText.text = "You win!";
-        }
-    }
-    //Move with the w,a,s,d keys
-    void move()
-    {
-        Vector3 add_position = Vector3.zero;
-        
-        if (Input.GetKey("a"))
-        {
-            add_position += Vector3.left * Time.deltaTime * speed;
-        }
-        if (Input.GetKey("d"))
-        {
-            add_position += Vector3.right * Time.deltaTime * speed;
-        }
-        if (Input.GetKey("w"))
-        {
-            add_position += Vector3.forward * Time.deltaTime * speed;
-        }
-        if (Input.GetKey("s"))
-        {
-            add_position += Vector3.back * Time.deltaTime * speed;
-        }
-        //add to player
-        GetComponent<Transform>().position += add_position;
 
-        if (transform.position.y < fallDepth)
+
+
+    //Move with the w,a,s,d keys
+    private void move()
+    {
+        
+        float translation = Input.GetAxis("Vertical") * 10 * Time.deltaTime;
+        float straffe = Input.GetAxis("Horizontal") * 10 * Time.deltaTime;
+
+        //Translate to move.
+        transform.Translate(straffe, 0, translation);
+
+        //unlock cursor mouse out of the screen
+        if (Input.GetKeyDown("escape"))
         {
-            Respawn();
+            Cursor.lockState = CursorLockMode.None;
         }
     }
+
     //Respawn
     public void Respawn()
     {
-        transform.position = startPos;
+        transform.position = startPos ;
         StartCoroutine(Blink());
         lives--;
         SetText();
 
-        if (lives <=0)
+        if (lives <= 0)
         {
             this.enabled = false;
         }
+        if(count =5)
+        {
+
+            this.enabled = false;
+        }
+
     }
+
     //Respawn blink
     public IEnumerator Blink()
     {
@@ -127,8 +130,12 @@ public class PlayerMovement : MonoBehaviour
         }
         GetComponent<MeshRenderer>().enabled = true;
     }
+
+    
+
+
     //Colliding function - enemies and collectables
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag ("Coin"))
         {
@@ -137,19 +144,19 @@ public class PlayerMovement : MonoBehaviour
             SetText();
         }
 
-        if (other.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             Respawn();
         }
-        if (other.tag == "Spike")
+        if (other.gameObject.tag == "Spike")
         {
             Respawn();
         }
-        if (other.tag == "Lava")
+        if (other.gameObject.tag == "Lava")
         {
             Respawn();
         }
-        if (other.tag == "DrippingLava")
+        if (other.gameObject.tag == "DrippingLava")
         {
             Respawn();
         }
@@ -157,6 +164,55 @@ public class PlayerMovement : MonoBehaviour
         {
             other.gameObject.SetActive(false);
         }
+
+        if (other.gameObject.tag == "Koopa")
+        {
+            Respawn();
+        }
+
+        if (other.tag == "Laser")
+        {
+            StartCoroutine(Stun());
+        }
+
+        if (other.tag == "Exit")
+        {
+            Scene_Switch.instance.switchScene(sceneNumber);
+            sceneNumber++;
+        }
     }
+
+
+
+
+    //Stun
+    IEnumerator Stun()
+    {
+        int currentPlayerSpeed = speed;
+        speed = 0;
+        yield return new WaitForSeconds(stunTimer);
+        speed = currentPlayerSpeed;
+    }
+
+
+
+
+    //Text
+    void SetText()
+    {
+        countText.text = "Count:" + count.ToString();
+        livesText.text = "Lives:" + lives.ToString();
+
+
+        if (lives <= 0)
+        {
+            gameOverText.text = "Game Over";
+        }
+        if (count >= 5)
+        {
+            winText.text = "You win!";
+        }
+    }
+
 
 }
